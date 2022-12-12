@@ -62,6 +62,27 @@ xui.Class('App', 'xui.Module',{
                 .setHAlign("left")
             );
             
+            append(
+                xui.create("xui.UI.ComboInput")
+                .setHost(host,"xui_ui_comboinput48")
+                .setLeft("0.7619047619047619em")
+                .setTop("6.095238095238095em")
+                .setWidth("18em")
+                .setLabelSize("8em")
+                .setLabelCaption("Help Input")
+                .setType("helpinput")
+                .setItems([
+                    {
+                        "id" : "item 1 text",
+                        "caption" : "item 1"
+                    },
+                    {
+                        "id" : "item 2 text",
+                        "caption" : "item 2"
+                    }
+                ])
+            );
+            
             return children;
             // ]]Code created by CrossUI RAD Studio
         },

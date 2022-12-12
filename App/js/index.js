@@ -42,7 +42,7 @@ xui.Class('App', 'xui.Module',{
                             {
                             },
                             {
-                                "caption" : "{xui.History.getParams()}"
+                                "caption" : "{getCookies()}"
                             }
                         ],
                         "method" : "setProperties",

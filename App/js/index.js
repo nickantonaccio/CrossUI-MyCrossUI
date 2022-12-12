@@ -21,146 +21,36 @@ xui.Class('App', 'xui.Module',{
             var host=this, children=[], append=function(child){children.push(child.get(0));};
             
             append(
-                xui.create("xui.UI.TreeGrid")
-                .setHost(host,"xui_ui_treegrid2")
-                .setLeft("0em")
-                .setTop("0em")
-                .setRowNumbered(true)
-                .setHeader([
-                    {
-                        "id" : "col1",
-                        "width" : "8em",
-                        "type" : "input",
-                        "caption" : "col1"
-                    },
-                    {
-                        "id" : "col2",
-                        "width" : "8em",
-                        "type" : "input",
-                        "caption" : "col2"
-                    },
-                    {
-                        "id" : "col3",
-                        "width" : "8em",
-                        "type" : "input",
-                        "caption" : "col3"
-                    },
-                    {
-                        "id" : "col4",
-                        "width" : "8em",
-                        "type" : "input",
-                        "caption" : "col4"
-                    }
-                ])
-                .setRows([
-                    {
-                        "cells" : [
-                            {
-                                "value" : "A1"
-                            },
-                            {
-                                "value" : "B1"
-                            },
-                            {
-                                "value" : "C1"
-                            },
-                            {
-                                "value" : "D1"
-                            }
+                xui.create("xui.UI.ECharts")
+                .setHost(host,"xui_ui_echarts1")
+                .setLeft("8.380952380952381em")
+                .setTop("2.2857142857142856em")
+                .setWidth("30.01904761904762em")
+                .setHeight("24.99047619047619em")
+                .setChartOption({
+                    "xAxis" : {
+                        "type" : "category",
+                        "data" : [
+                            "Mon",
+                            "Tue",
+                            "Wed",
+                            "Thu",
+                            "Fri",
+                            "Sat",
+                            "Sun"
                         ]
                     },
-                    {
-                        "cells" : [
-                            {
-                                "value" : "A2"
-                            },
-                            {
-                                "value" : "B2"
-                            },
-                            {
-                                "value" : "C2"
-                            },
-                            {
-                                "value" : "D2"
-                            }
-                        ]
+                    "yAxis" : {
+                        "type" : "value"
                     },
-                    {
-                        "cells" : [
-                            {
-                                "value" : "A3"
-                            },
-                            {
-                                "value" : "B3"
-                            },
-                            {
-                                "value" : "C3"
-                            },
-                            {
-                                "value" : "D3"
-                            }
-                        ],
-                        "sub" : [
-                            {
-                                "cells" : [
-                                    "A4",
-                                    "B4",
-                                    "C4",
-                                    "D4"
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "iniFold" : false,
-                        "cells" : [
-                            {
-                                "value" : "A5"
-                            },
-                            {
-                                "value" : "B5"
-                            },
-                            {
-                                "value" : "C5"
-                            },
-                            {
-                                "value" : "D5"
-                            }
-                        ],
-                        "sub" : [
-                            {
-                                "cells" : [
-                                    {
-                                        "value" : "A6"
-                                    },
-                                    {
-                                        "value" : "B6"
-                                    },
-                                    {
-                                        "value" : "C6"
-                                    },
-                                    {
-                                        "value" : "D6"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ])
-                .onClickCell([
-                    {
-                        "desc" : "Action 1",
-                        "type" : "other",
-                        "target" : "msg",
-                        "args" : [
-                            "test",
-                            "test1"
-                        ],
-                        "method" : "alert",
-                        "onOK" : 2,
-                        "event" : 2
-                    }
-                ])
+                    "series" : [
+                        {
+                            "data" : [820, 932, 901, 934, 1290, 1330, 1320],
+                            "type" : "line",
+                            "smooth" : true
+                        }
+                    ]
+                })
             );
             
             return children;
